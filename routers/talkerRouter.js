@@ -30,4 +30,6 @@ router.post('/', talkerValidator, controllers.createTalker);
 
 router.put('/:id', talkerValidator, controllers.editTalker);
 
+router.delete('/:id', TokenValidator, controllers.deleteTalker);
+
 module.exports = router;

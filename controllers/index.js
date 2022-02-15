@@ -3,6 +3,7 @@ const getTalkerById = require('./getTalkerById');
 const postLogin = require('./postLogin');
 const createTalker = require('./createTalker');
 const editTalker = require('./editTalker');
+const deleteTalker = require('./deleteTalker');
 
 module.exports = {
   getAllTalkers,
@@ -10,4 +11,5 @@ module.exports = {
   postLogin,
   createTalker,
   editTalker,
+  deleteTalker,
 };
