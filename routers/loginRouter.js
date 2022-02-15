@@ -4,11 +4,11 @@ const router = express.Router();
 
 const controllers = require('../controllers');
 
-const middlewares = require('../middlewares');
+const { PasswordValidator, EmailValidator } = require('../middlewares');
 
 const loginValidator = [
-  middlewares.PasswordValidator,
-  middlewares.EmailValidator,
+  PasswordValidator,
+  EmailValidator,
 ];
 
 router.post('/', loginValidator, controllers.postLogin);
