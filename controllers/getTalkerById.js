@@ -1,10 +1,9 @@
-/* eslint-disable radix */
 const readFile = require('../helpers/readFile');
 
 module.exports = async (req, res) => {
   const { id } = req.params;
   const talkers = await readFile();
-  const talker = talkers.find((r) => r.id === parseInt(id));
+  const talker = talkers.find((r) => r.id === Number(id));
 
   if (!talker) {
     return res
