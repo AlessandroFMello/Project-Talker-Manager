@@ -13,7 +13,7 @@ const {
   RateValidator,
 } = require('../middlewares');
 
-const postValidator = [
+const talkerValidator = [
   TokenValidator,
   NameValidator,
   AgeValidator,
@@ -26,6 +26,8 @@ router.get('/', controllers.getAllTalkers);
 
 router.get('/:id', controllers.getTalkerById);
 
-router.post('/', postValidator, controllers.createTalker);
+router.post('/', talkerValidator, controllers.createTalker);
+
+router.put('/:id', talkerValidator, controllers.editTalker);
 
 module.exports = router;
