@@ -22,14 +22,38 @@ const talkerValidator = [
   RateValidator,
 ];
 
-router.get('/', controllers.getAllTalkers);
+router.get(
+  '/search',
+  TokenValidator,
+  controllers.searchTalker,
+);
 
-router.get('/:id', controllers.getTalkerById);
+router.get(
+  '/',
+  controllers.getAllTalkers,
+);
 
-router.post('/', talkerValidator, controllers.createTalker);
+router.get(
+  '/:id',
+  controllers.getTalkerById,
+);
 
-router.put('/:id', talkerValidator, controllers.editTalker);
+router.post(
+  '/',
+  talkerValidator,
+  controllers.createTalker,
+);
 
-router.delete('/:id', TokenValidator, controllers.deleteTalker);
+router.put(
+  '/:id',
+  talkerValidator,
+  controllers.editTalker,
+);
+
+router.delete(
+  '/:id',
+  TokenValidator,
+  controllers.deleteTalker,
+);
 
 module.exports = router;
